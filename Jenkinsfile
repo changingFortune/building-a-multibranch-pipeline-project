@@ -1,17 +1,19 @@
 pipeline {
-    agent { 
-    	docker {
-            image 'node:8.9.4'
-            args '-p 4001:3000'
-        }
-    }
-    environment {
-        CI = 'true'
-    }
+    // agent { 
+    // 	docker {
+    //         image 'node:8.9.4'
+    //         args '-p 4001:3000'
+    //     }
+    // }
+    // environment {
+    //     CI = 'true'
+    // }
+    agent any
     stages {
         stage('Build') {
             steps {
-                sh 'npm install'
+                // sh 'npm install'
+                sh 'echo what'
             }
         }
         stage('Test') {
